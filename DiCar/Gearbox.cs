@@ -4,11 +4,16 @@ namespace DiCar
 {
 	public class Gearbox : IGearbox
 	{
-		public IGearstick Gearstick { get; }
+		private IGearstick Gearstick { get; }
 
 		public Gearbox(IGearstick gearstick)
 		{
 			Gearstick = gearstick;
+		}
+
+		public string Run()
+		{
+			return "o";
 		}
 	}
 }

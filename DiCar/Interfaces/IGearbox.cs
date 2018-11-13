@@ -2,6 +2,6 @@
 {
 	public interface IGearbox
 	{
-		IGearstick Gearstick { get; }
+		string Run();
 	}
 }

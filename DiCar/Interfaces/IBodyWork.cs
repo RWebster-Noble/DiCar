@@ -2,6 +2,6 @@
 {
 	public interface IBodywork
 	{
-		IPaint Paint { get; }
+		string Run();
 	}
 }

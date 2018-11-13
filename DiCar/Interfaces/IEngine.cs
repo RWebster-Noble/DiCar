@@ -2,6 +2,6 @@
 {
 	public interface IEngine
 	{
-		IGearbox Gearbox { get; }
+		string Run();
 	}
 }

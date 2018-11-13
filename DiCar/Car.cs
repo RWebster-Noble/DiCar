@@ -5,7 +5,7 @@ namespace DiCar
 {
 	public class Car
 	{
-		public IChassis Chassis { get; }
+		private IChassis Chassis { get; }
 
 		public Car(IChassis chassis)
 		{
@@ -14,7 +14,7 @@ namespace DiCar
 
 		public string Run()
 		{
-			return "Vroom!";
+			return "V" + Chassis.Run();
 		}
 	}
 }

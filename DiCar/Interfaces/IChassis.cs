@@ -2,7 +2,6 @@
 {
 	public interface IChassis
 	{
-		IEngine Engine { get; }
-		IBodywork Bodywork { get; }
+		string Run();
 	}
 }

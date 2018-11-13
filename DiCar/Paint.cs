@@ -11,5 +11,10 @@ namespace DiCar
 		{
 			Colour = colour;
 		}
+
+		public string Run()
+		{
+			return "!";
+		}
 	}
 }

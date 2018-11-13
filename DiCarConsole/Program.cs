@@ -6,7 +6,7 @@ namespace DiCarConsole
 {
 	class Program
 	{
-		static void Main()
+		static void Main(string[] args)
 		{
 			var carColour = Color.Black;
 
@@ -19,7 +19,7 @@ namespace DiCarConsole
 
 			var car = new Car(chassis);
 
-			Console.WriteLine(car.Chassis.Engine.Gearbox.Gearstick);
+			Console.WriteLine(car.Run());
 		}
 	}
 }

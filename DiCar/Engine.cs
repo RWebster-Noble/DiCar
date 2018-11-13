@@ -4,11 +4,16 @@ namespace DiCar
 {
 	public class Engine : IEngine
 	{
-		public IGearbox Gearbox { get; }
+		private IGearbox Gearbox { get; }
 
 		public Engine(IGearbox gearbox)
 		{
 			Gearbox = gearbox;
+		}
+
+		public string Run()
+		{
+			return "o" + Gearbox.Run();
 		}
 	}
 }
