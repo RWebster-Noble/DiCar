@@ -9,19 +9,25 @@ namespace DiCarTests
 	[TestFixture]
 	public class TestGearbox
 	{
+		private Mock<IGearstick> _mockGearstick;
+
 		private Gearbox _gearbox;
 
 		[SetUp]
 		public void SetUp()
 		{
-			var mockGearstick = new Mock<IGearstick>(MockBehavior.Strict);
-			_gearbox = new Gearbox(mockGearstick.Object);
+			_mockGearstick = new Mock<IGearstick>(MockBehavior.Strict);
+
+			_gearbox = new Gearbox(_mockGearstick.Object);
 		}
 
 		[Test]
 		public void Test_Gearbox()
 		{
-			Assert.IsNotNull(_gearbox);
+			var result = _gearbox.Run();
+
+
+			Assert.AreEqual("o", result);
 		}
 	}
 }
