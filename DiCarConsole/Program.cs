@@ -8,16 +8,12 @@ namespace DiCarConsole
 	{
 		static void Main(string[] args)
 		{
-			var carColour = Color.Black;
-
-			var paint = new Paint(carColour);
 			var gearStick = new Gearstick();
 			var gearbox = new Gearbox(gearStick);
-			var engine = new Engine(gearbox);
-			var bodyWork = new Bodywork(paint);
-			var chassis = new Chassis(engine, bodyWork);
+		    var bodyControlModule = new BodyControlModule();
+		    var engine = new Engine(gearbox, bodyControlModule);
 
-			var car = new Car(chassis);
+			var car = new Car(engine);
 
 			Console.WriteLine(car.Run());
 		}

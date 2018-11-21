@@ -5,5 +5,9 @@ namespace DiCar
 {
 	public class Gearstick : IGearstick
 	{
-	}
+	    public string Run()
+	    {
+	        return "!";
+	    }
+    }
 }

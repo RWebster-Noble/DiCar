@@ -5,16 +5,16 @@ namespace DiCar
 {
 	public class Car
 	{
-		private IChassis Chassis { get; }
+	    public IEngine Engine { get; }
 
-		public Car(IChassis chassis)
+	    public Car(IEngine engine)
 		{
-			Chassis = chassis;
+			Engine = engine;
 		}
 
-		public string Run()
+	    public string Run()
 		{
-			return "V" + Chassis.Run();
+			return "Vr" + Engine.Run();
 		}
 	}
 }

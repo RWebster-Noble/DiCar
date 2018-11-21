@@ -13,7 +13,7 @@ namespace DiCar
 
 		public string Run()
 		{
-			return "o";
+			return "m" + Gearstick.Run();
 		}
 	}
 }

@@ -8,16 +8,16 @@ namespace DiCarTests
 	[TestFixture]
 	public class TestCar
 	{
-		private Mock<IChassis> _mockChassis;
+	    private Mock<IEngine> _mockEngine;
 
-		private Car _car;
+	    private Car _car;
 
-		[SetUp]
+	    [SetUp]
 		public void SetUp()
 		{
-			_mockChassis = new Mock<IChassis>(MockBehavior.Strict);
-			_mockChassis.Setup(x => x.Run()).Returns("");
-			_car = new Car(_mockChassis.Object);
+			_mockEngine = new Mock<IEngine>(MockBehavior.Strict);
+			_mockEngine.Setup(x => x.Run()).Returns("");
+			_car = new Car(_mockEngine.Object);
 		}
 
 		[Test]
@@ -28,8 +28,8 @@ namespace DiCarTests
 			var result = _car.Run();
 
 
-			Assert.AreEqual("V", result);
-			_mockChassis.Verify(x => x.Run(), Times.Once);
+			Assert.AreEqual("Vr", result);
+			_mockEngine.Verify(x => x.Run(), Times.Once);
 		}
 	}
 }

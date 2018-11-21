@@ -6,14 +6,14 @@ namespace DiCar
 	{
 		private IGearbox Gearbox { get; }
 
-		public Engine(IGearbox gearbox)
+		public Engine(IGearbox gearbox, IBodyControlModule bodyControlModule)
 		{
 			Gearbox = gearbox;
 		}
 
 		public string Run()
 		{
-			return "o" + Gearbox.Run();
+			return "oo" + Gearbox.Run();
 		}
 	}
 }

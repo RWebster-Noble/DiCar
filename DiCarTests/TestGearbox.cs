@@ -17,6 +17,7 @@ namespace DiCarTests
 		public void SetUp()
 		{
 			_mockGearstick = new Mock<IGearstick>(MockBehavior.Strict);
+		    _mockGearstick.Setup(x => x.Run()).Returns("");
 
 			_gearbox = new Gearbox(_mockGearstick.Object);
 		}
@@ -26,8 +27,7 @@ namespace DiCarTests
 		{
 			var result = _gearbox.Run();
 
-
-			Assert.AreEqual("o", result);
+			Assert.AreEqual("m", result);
 		}
 	}
 }
