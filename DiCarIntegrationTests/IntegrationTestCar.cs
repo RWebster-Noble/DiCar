@@ -15,9 +15,9 @@ namespace DiCarIntegrationTests
         protected override void SetUp()
         {
             base.SetUp();
+            Services.AddSingleton<IBodyControlModule, BodyControlModule>();
             Services.AddSingleton<IGearstick, Gearstick>();
             Services.AddSingleton<IGearbox, Gearbox>();
-            Services.AddSingleton<IBodyControlModule, BodyControlModule>();
             Services.AddSingleton<IEngine, Engine>();
 
             _car = ActivatorUtilities.CreateInstance<Car>(Provider);
