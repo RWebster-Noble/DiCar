@@ -24,7 +24,7 @@ namespace DiCarIntegrationTests
         [Test]
         public void Test()
         {
-            var result = Engine.Run();
+            var result = _engine.Run();
 
             Assert.AreEqual("oom!", result);
         }
