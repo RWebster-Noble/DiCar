@@ -7,9 +7,9 @@ namespace DiCarConsole
     {
         private static void Main(string[] args)
         {
+            var bodyControlModule = new BodyControlModule();
             var gearStick = new Gearstick();
             var gearbox = new Gearbox(gearStick);
-            var bodyControlModule = new BodyControlModule();
             var engine = new Engine(gearbox, bodyControlModule);
 
             var car = new Car(engine);

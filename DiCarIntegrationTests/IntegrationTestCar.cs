@@ -11,9 +11,9 @@ namespace DiCarIntegrationTests
         [SetUp]
         public void SetUp()
         {
+            var bodyControlModule = new BodyControlModule();
             var gearstick = new Gearstick();
             var gearbox = new Gearbox(gearstick);
-            var bodyControlModule = new BodyControlModule();
             var engine = new Engine(gearbox, bodyControlModule);
 
             _car = new Car(engine);
