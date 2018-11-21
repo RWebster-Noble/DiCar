@@ -1,23 +1,28 @@
 ﻿using DiCar;
+using DiCar.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
+using TestBase;
 
 namespace DiCarTests
 {
 	[TestFixture]
-	public class TestGearstick
+	public class TestGearstick : BaseSetup
 	{
-		private Gearstick _gearstick;
 
 		[SetUp]
-		public void SetUp()
+		protected override void SetUp()
 		{
-			_gearstick = new Gearstick();
+            base.SetUp();
+		    Services.AddSingleton<IGearstick, Gearstick>();
 		}
 
 		[Test]
 		public void Test_Gearstick()
 		{
-			Assert.IsNotNull(_gearstick);
+		    var result = Gearstick.Run();
+
+		    Assert.AreEqual("!", result);
 		}
 	}
 }

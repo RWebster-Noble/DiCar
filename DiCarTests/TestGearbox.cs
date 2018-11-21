@@ -1,31 +1,27 @@
 ﻿using DiCar;
 using DiCar.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
+using TestBase;
 
 namespace DiCarTests
 {
 	[TestFixture]
-	public class TestGearbox
+	public class TestGearbox : BaseSetup
 	{
-		private Mock<IGearstick> _mockGearstick;
-
-		private Gearbox _gearbox;
-
 		[SetUp]
-		public void SetUp()
+		protected override void SetUp()
 		{
-			_mockGearstick = new Mock<IGearstick>(MockBehavior.Strict);
-		    _mockGearstick.Setup(x => x.Run()).Returns("");
-
-			_gearbox = new Gearbox(_mockGearstick.Object);
+            base.SetUp();
+		    Services.AddSingleton<IGearbox, Gearbox>();
 		}
 
 		[Test]
 		public void Test_Gearbox()
 		{
-			var result = _gearbox.Run();
+			var result = Gearbox.Run();
 
 			Assert.AreEqual("m", result);
 		}

@@ -1,23 +1,22 @@
 ﻿using DiCar;
 using DiCar.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using NUnit.Framework;
+using TestBase;
 
 namespace DiCarTests
 {
 	[TestFixture]
-	public class TestCar
+	public class TestCar : BaseSetup
 	{
-	    private Mock<IEngine> _mockEngine;
-
 	    private Car _car;
 
 	    [SetUp]
-		public void SetUp()
+	    protected override void SetUp()
 		{
-			_mockEngine = new Mock<IEngine>(MockBehavior.Strict);
-			_mockEngine.Setup(x => x.Run()).Returns("");
-			_car = new Car(_mockEngine.Object);
+            base.SetUp();
+		    _car = ActivatorUtilities.CreateInstance<Car>(Provider);
 		}
 
 		[Test]
@@ -29,7 +28,7 @@ namespace DiCarTests
 
 
 			Assert.AreEqual("Vr", result);
-			_mockEngine.Verify(x => x.Run(), Times.Once);
+			MockEngine.Verify(x => x.Run(), Times.Once);
 		}
 	}
 }

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DiCar\DiCar.csproj" />
+    <ProjectReference Include="..\TestBase\TestBase.csproj" />
   </ItemGroup>
 
 </Project>

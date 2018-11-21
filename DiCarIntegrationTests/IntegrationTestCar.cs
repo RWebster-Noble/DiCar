@@ -2,24 +2,27 @@
 using System.Drawing;
 using DiCar;
 using DiCar.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
+using TestBase;
 
 namespace DiCarIntegrationTests
 {
     [TestFixture]
-    public class IntegrationTestCar
+    public class IntegrationTestCar : BaseSetup
     {
         private Car _car;
 
         [SetUp]
-        public void SetUp()
+        protected override void SetUp()
         {
-            var gearstick = new Gearstick();
-            var gearbox = new Gearbox(gearstick);
-            var bodyControlModule = new BodyControlModule();
-            var engine = new Engine(gearbox, bodyControlModule);
+            base.SetUp();
+            Services.AddSingleton<IGearstick, Gearstick>();
+            Services.AddSingleton<IGearbox, Gearbox>();
+            Services.AddSingleton<IBodyControlModule, BodyControlModule>();
+            Services.AddSingleton<IEngine, Engine>();
 
-            _car = new Car(engine);
+            _car = ActivatorUtilities.CreateInstance<Car>(Provider);
         }
 
         [Test]

@@ -1,38 +1,30 @@
 ﻿using DiCar;
 using DiCar.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using NUnit.Framework;
+using TestBase;
 
 namespace DiCarTests
 {
 	[TestFixture]
-	public class TestEngine
+	public class TestEngine : BaseSetup
 	{
-		private Mock<IGearbox> _mockGearbox;
-	    private Mock<IBodyControlModule> _mockBcm;
-
-	    private Engine _engine;
-
 	    [SetUp]
-		public void SetUp()
+	    protected override void SetUp()
 		{
-			_mockGearbox = new Mock<IGearbox>(MockBehavior.Strict);
-			_mockGearbox.Setup(x => x.Run()).Returns("");
-
-		    _mockBcm = new Mock<IBodyControlModule>(MockBehavior.Strict);
-		    _engine = new Engine(_mockGearbox.Object, _mockBcm.Object);
+            base.SetUp();
+		    Services.AddSingleton<IEngine, Engine>();
 		}
 
 		[Test]
 		public void Test_Engine()
 		{
 
-
-			var result = _engine.Run();
-
+			var result = Engine.Run();
 
 			Assert.AreEqual("oo", result);
-			_mockGearbox.Verify(x => x.Run(), Times.Once);
+			MockGearbox.Verify(x => x.Run(), Times.Once);
 		}
 	}
 }
