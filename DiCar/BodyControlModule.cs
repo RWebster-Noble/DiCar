@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DiCar.Interfaces;
+﻿using DiCar.Interfaces;
 
 namespace DiCar
 {

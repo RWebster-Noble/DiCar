@@ -2,18 +2,18 @@
 
 namespace DiCar
 {
-	public class Gearbox : IGearbox
-	{
-		private IGearstick Gearstick { get; }
+    public class Gearbox : IGearbox
+    {
+        private IGearstick Gearstick { get; }
 
-		public Gearbox(IGearstick gearstick)
-		{
-			Gearstick = gearstick;
-		}
+        public Gearbox(IGearstick gearstick)
+        {
+            Gearstick = gearstick;
+        }
 
-		public string Run()
-		{
-			return "m" + Gearstick.Run();
-		}
-	}
+        public string Run()
+        {
+            return "m" + Gearstick.Run();
+        }
+    }
 }

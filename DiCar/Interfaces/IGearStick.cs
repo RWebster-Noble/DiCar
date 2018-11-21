@@ -1,7 +1,7 @@
 ﻿namespace DiCar.Interfaces
 {
-	public interface IGearstick
-	{
-	    string Run();
-	}
+    public interface IGearstick
+    {
+        string Run();
+    }
 }

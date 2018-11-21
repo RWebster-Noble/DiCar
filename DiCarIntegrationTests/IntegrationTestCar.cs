@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-using DiCar;
-using DiCar.Interfaces;
+﻿using DiCar;
 using NUnit.Framework;
 
 namespace DiCarIntegrationTests

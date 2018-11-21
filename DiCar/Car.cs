@@ -1,20 +1,19 @@
-﻿using System;
-using DiCar.Interfaces;
+﻿using DiCar.Interfaces;
 
 namespace DiCar
 {
-	public class Car
-	{
-	    public IEngine Engine { get; }
+    public class Car
+    {
+        public IEngine Engine { get; }
 
-	    public Car(IEngine engine)
-		{
-			Engine = engine;
-		}
+        public Car(IEngine engine)
+        {
+            Engine = engine;
+        }
 
-	    public string Run()
-		{
-			return "Vr" + Engine.Run();
-		}
-	}
+        public string Run()
+        {
+            return "Vr" + Engine.Run();
+        }
+    }
 }
