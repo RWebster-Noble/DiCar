@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-using DiCar;
+﻿using DiCar;
 using DiCar.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
@@ -24,7 +22,7 @@ namespace DiCarIntegrationTests
         [Test]
         public void Test()
         {
-            var result = _engine.Run();
+            var result = Engine.Run();
 
             Assert.AreEqual("oom!", result);
         }

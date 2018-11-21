@@ -1,21 +1,20 @@
-﻿using DiCar;
-using System;
-using System.Drawing;
+﻿using System;
+using DiCar;
 
 namespace DiCarConsole
 {
-	class Program
-	{
-		static void Main(string[] args)
-		{
-			var gearStick = new Gearstick();
-			var gearbox = new Gearbox(gearStick);
-		    var bodyControlModule = new BodyControlModule();
-		    var engine = new Engine(gearbox, bodyControlModule);
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            var gearStick = new Gearstick();
+            var gearbox = new Gearbox(gearStick);
+            var bodyControlModule = new BodyControlModule();
+            var engine = new Engine(gearbox, bodyControlModule);
 
-			var car = new Car(engine);
+            var car = new Car(engine);
 
-			Console.WriteLine(car.Run());
-		}
-	}
+            Console.WriteLine(car.Run());
+        }
+    }
 }

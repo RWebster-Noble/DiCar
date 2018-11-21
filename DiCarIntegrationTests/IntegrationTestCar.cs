@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-using DiCar;
+﻿using DiCar;
 using DiCar.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
