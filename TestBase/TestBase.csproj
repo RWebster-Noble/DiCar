@@ -6,16 +6,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+    <PackageReference Include="Moq" Version="4.10.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DiCar\DiCar.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Moq">
-      <HintPath>C:\Users\The_M\.nuget\packages\moq\4.10.0\lib\netstandard1.3\Moq.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
