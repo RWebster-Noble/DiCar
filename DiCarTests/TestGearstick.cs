@@ -19,6 +19,8 @@ namespace DiCarTests
         [Test]
         public void Test_Gearstick()
         {
+            //MockBodyControlModule.SetupGet(x => x.InteriorTrimLightsOn).Returns(false);
+
             var result = Gearstick.Run();
 
             Assert.AreEqual("!", result);
